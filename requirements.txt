@@ -1,3 +1,9 @@
 pandas
 requests
 openpyxl
+re
+email
+imaplib 
+datetime
+stmplib
+bs4 

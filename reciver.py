@@ -36,7 +36,7 @@ def extract_date_range(filename):
 
 def save_attachments_from_gmail(save_directory):
     mail = imaplib.IMAP4_SSL('imap.gmail.com')
-    mail.login('EMAIL_ADDRESS', 'EMAIL_PASSWORD')
+    mail.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
     mail.select('inbox')
 
     # Get last 7 days in IMAP format
@@ -90,8 +90,8 @@ def save_attachments_from_gmail(save_directory):
 # --- Email Sender ---
 
 def send_email_with_attachment(to_email, subject, body, file_path):
-    from_email = 'EMAIL_ADDRESS'
-    password = 'EMAIL_PASSWORD'
+    from_email = EMAIL_ADDRESS
+    password = EMAIL_PASSWORD
 
     msg = MIMEMultipart()
     msg['From'] = from_email

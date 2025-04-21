@@ -1,4 +1,4 @@
-name: Daily GPS Sensor Report
+name: Weekly Fuel data report
 
 on:
   schedule:
@@ -34,11 +34,8 @@ jobs:
     - name: Run GPS Sensor Report Script
       env:
         # Store sensitive information as encrypted GitHub Secrets
-        GPS_API_KEY: ${{ secrets.GPS_API_KEY }}
-        GPS_DEVICE_ID: ${{ secrets.GPS_DEVICE_ID }}
-        SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
-        SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
-        RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
+        EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD}}
+        EMAIL_SEND: ${{ secrets.EMAIL_SEND }}
       run: |
-        python scripts/gps_sensor_report.py
-        python scripts/gpsdoor_report.py
+        python reciver.py

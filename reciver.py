@@ -144,7 +144,7 @@ if __name__ == "__main__":
         excel_file, num_datasets = main(file_path2, file_path1)
 
         # Force the output file name
-        custom_excel_name = "test1.xlsx"
+        custom_excel_name = "TavanbogdDoloo.xlsx"
         if excel_file:
             new_excel_path = os.path.join(os.path.dirname(excel_file), custom_excel_name)
             os.rename(excel_file, new_excel_path)
